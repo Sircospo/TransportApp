@@ -1,0 +1,45 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui" xmlns:po="http://primefaces.org/prestige">
+
+    <div class="layout-menu-container">
+        <div class="overlay-menu-button">
+            <div class="overlay-menu-button-bars">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="overlay-menu-button-times">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <h:form id="menuform">  
+            <div class="layout-menu-wrapper">      
+                <po:menu widgetVar="prestigeMenuWidget">
+                    <p:menuitem id="om_dashboard" value="Dashboard" icon="fa fa-fw fa-dashboard" outcome="/dashboard" />
+                    <p:submenu id="om_components" label="Country" icon="fa fa-fw fa-bars">
+                        <p:menuitem id="om_sample" value="Ghana" icon="fa fa-fw fa-columns" outcome="/dashboard_country" />
+                        <p:menuitem id="om_forms" value="Cote d' ivore" icon="fa fa-fw fa-code" outcome="/dashboard_country" />
+                        <p:menuitem id="om_data" value="Burkina Faso" icon="fa fa-fw fa-table" outcome="/dashboard_country" />
+
+                    </p:submenu>
+                    <p:submenu id="om_default" label="Bank" icon="fa fa-fw fa-cube">
+                        <p:menuitem id="om_empty" value="UBA" icon="fa fa-fw fa-square-o" outcome="/dashboard_bank" />
+                        <p:menuitem id="om_login" value="ECOBANK" icon="fa fa-fw fa-sign-in" outcome="/dashboard_bank" />
+                    </p:submenu>
+                    <p:submenu id="om_hierarchy" label="Product" icon="fa fa-fw fa-sitemap">
+                        <p:menuitem id="product1" value="Bvirtual" icon="fa fa-fw fa-square-o" outcome="/dashboard" />
+                        <p:menuitem id="product2" value="Peoples Pay" icon="fa fa-fw fa-square-o" outcome="/dashboard" />
+                        <p:menuitem id="product3" value="Bulk Money Transfer" icon="fa fa-fw fa-square-o" outcome="/dashboard" />
+                        <p:menuitem id="product4" value="AfriRemit" icon="fa fa-fw fa-square-o" outcome="/dashboard" />
+                    </p:submenu>
+                   
+                   
+
+                </po:menu>
+            </div>                  
+        </h:form>
+    </div>
+</ui:composition>

@@ -1,0 +1,63 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui" template="/WEB-INF/template.xhtml">
+
+    <ui:define name="title">Dashboard</ui:define>
+    <ui:define name="viewname">
+        <li>Dashboard</li>
+        <li>
+            <p:link outcome="/dashboard">Default</p:link>
+        </li>
+    </ui:define>
+    <ui:define name="content">
+
+        <h:form id="form"> 
+            <div class="p-grid ui-fluid">
+                <div class="p-col-12">
+
+                    <!--<p:panelGrid columns="1" columnClasses="ui-g-12 ui-md-2,ui-g-12 ui-md-4,ui-g-12 ui-md-2 ui-grc-2,ui-g-12 ui-md-4" layout="grid" styleClass="ui-panelgrid-blank">-->
+                    <p:panel header="Card activities">
+                        <div class="p-grid">
+                            <div class="p-col">
+                            </div>
+                            <div class="p-col">
+                                <p:panelGrid columns="2" columnClasses="text-align-right,text-align-left" styleClass="ui-panelgrid-blank centered">
+
+
+                                    <p:outputLabel for="startDate" value="Start Date" />
+                                    <p:inputText id="startDate" value="#{cardActivitiesBean.startDate}" />
+
+                                    <p:outputLabel for="endDate" value="End Date" />
+                                    <p:inputText id="endDate" value="#{cardActivitiesBean.endDate}" />
+
+                                    <p:outputLabel for="numberOfTransactions" value="Number Of Transactions" />
+                                    <p:inputText id="numberOfTransactions" value="#{cardActivitiesBean.numberOfTransactions}" />
+
+                                    <p:outputLabel 
+                                        value=""> 
+                                    </p:outputLabel>
+
+                                    <p:commandButton  
+                                        value="Submit" 
+                                        update =":form:accordionPanel"
+                                        action="#{cardActivitiesBean.requestStatementButtonAction}" 
+                                        /> 
+
+                                    <p:accordionPanel id = "accordionPanel" value="#{cardActivitiesBean.cardActivitiesModel}" var="activity">
+                                        <p:tab title="#{activity.transactionDate}">
+                                            <h:panelGrid columns="2" cellpadding="5">                                      
+                                                <h:outputText value="#{activity.transactionDesc}" />
+                                            </h:panelGrid>
+                                        </p:tab>
+                                    </p:accordionPanel>
+
+                                </p:panelGrid>
+                            </div>
+                            <div class="p-col"></div>
+                        </div>>
+                    </p:panel>
+                </div>
+            </div>
+        </h:form>
+    </ui:define>
+</ui:composition>

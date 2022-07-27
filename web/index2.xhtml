@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      lang="en">
+    <head>
+        <!-- Basic Page Needs
+    ================================================== -->
+        <title>Bus Scheduler</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+        <!-- CSS
+    ================================================== -->
+        <link rel="stylesheet" href="css/style.css"/>
+        <link rel="stylesheet" href="css/colors/main.css" id="colors"/>
+    </head>
+
+    <h:head>
+
+        <!-- Basic Page Needs
+================================================== -->
+        <title>Bus Scheduler</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+        <!-- CSS
+    ================================================== -->
+        <link rel="stylesheet" href="css/style.css"/>
+        <link rel="stylesheet" href="css/colors/main.css" id="colors"/>
+        <f:facet name="first">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+            <meta name="apple-mobile-web-app-capable" content="yes" />
+            <link rel="shortcut icon" type="image/x-icon" href="#{request.contextPath}/prestige-layout/images/favicon.ico" />
+        </f:facet>
+        <h:outputScript name="js/layout.js" library="prestige-layout" />
+        <ui:insert name="head"/>
+    </h:head>
+
+
+
+    <body>
+        <!-- Wrapper -->
+        
+        <div id="wrapper">
+            <!-- Header Container
+    ================================================== -->
+               <h:form id = "form2"> 
+            <header id="header-container">
+                <!-- Topbar -->
+                <div id="top-bar">
+                    <div class="container">
+                        <!-- Left Side Content -->
+                        <div class="left-side">
+                            <!-- Top bar -->
+                            <ul class="top-bar-menu">
+                                <li><i class="fa fa-phone"></i>+233 547 885 500</li>
+                                <li><i class="fa fa-envelope"></i> <a href="#"><span class="__cf_email__" data-cfemail="b3dcd5d5dad0d6f3d6cbd2dec3dfd69dd0dcde">blestone2000k@gmail.com</span></a></li>
+                                <li>
+
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Left Side Content / End -->
+                        <!-- Left Side Content -->
+                        <div class="right-side">
+                            <!-- Social Icons -->
+                            <ul class="social-icons">
+                                <li><a class="facebook" href="#"><i class="icon-facebook"></i></a></li>
+                                <li><a class="twitter" href="#"><i class="icon-twitter"></i></a></li>
+                                <li><a class="gplus" href="#"><i class="icon-gplus"></i></a></li>
+                                <li><a class="pinterest" href="#"><i class="icon-pinterest"></i></a></li>
+                            </ul>
+                        </div>
+                        <!-- Left Side Content / End -->
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <!-- Topbar / End -->
+                <!-- Header -->
+                <div id="header">
+                    <div class="container">
+                        <!-- Left Side Content -->
+                        <div class="left-side">
+                            <!-- Logo -->
+                            <div id="logo">
+                                <a href="index.html"><img src="images/logo.png" alt=""/></a>
+                            </div>
+                            <!-- Mobile Navigation -->
+                            <div class="mmenu-trigger">
+                                <button class="hamburger hamburger--collapse" type="button">
+                                    <span class="hamburger-box">
+                                        <span class="hamburger-inner"></span>
+                                    </span>
+                                </button>
+                            </div>
+                            <!-- Main Navigation -->
+                            <nav id="navigation" class="style-1">
+                                <ul id="responsive">
+                                    <li><a class="current" href="index.xhtml">Home</a>
+                                    </li>
+
+                                    <p:commandButton  
+                                        value="Booking now" 
+                                        id="indexbooking8" 
+                                        action="#{indexBean.submitButtonAction2}" 
+                                        />
+
+                                    <li><a href="">Help</a></li>
+                                </ul>
+                            </nav>
+                            <div class="clearfix"></div>
+                            <!-- Main Navigation / End -->
+                        </div>
+                        <!-- Left Side Content / End -->
+                        <!-- Right Side Content / End -->
+                        <div class="right-side">
+                            <!-- Header Widget -->
+                            <div class="header-widget">
+                                    <p:commandButton  
+                                        value="Log out" 
+                                        id="indexbooking39" 
+                                        action="#{indexBean.logoutButtonAction}" 
+                                        />
+               
+                                    <p:outputLabel 
+                                        value="#{loginBean.username}"> 
+                                    </p:outputLabel>
+                                                               
+                               
+                            </div>
+                         
+                            <!-- Header Widget / End -->
+                        </div>
+                        <!-- Right Side Content / End -->
+                    </div>
+                </div>
+
+                <!-- Header / End -->
+            </header>
+            <div class="clearfix"></div>
+            <!-- Header Container / End -->
+            <!-- Banner
+    ================================================== -->
+            <div class="parallax" data-background="images/bus.jpg" data-color="#36383e" data-color-opacity="0.45" data-img-width="2500" data-img-height="1600">
+                <div class="parallax-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <!-- Main Search Container -->
+                                <div class="main-search-container" style="margin-top: 150px;margin-bottom: 150px">
+                                    <h2>Book Your Trip</h2>
+                                    <!-- Main Search -->
+
+                                    <!-- Main Search -->
+                                </div>
+                                <!-- Main Search Container / End -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Content
+    ================================================== -->
+
+
+         
+                <p:spacer  width="100" />
+                <p:tabView id = "tabview2"   > 
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h3 class="headline margin-bottom-25 margin-top-65">ARRIVALS  DEPARTURES</h3>
+                                <span>Get Up-To-Date Travelling Information.</span>
+                            </div>
+                            <div class="row fullwidth-layout">
+                                <div class="col-md-12">
+                                    <div class="style-2">
+                                        <!-- Tabs Navigation -->
+                                        <ul class="tabs-nav">
+                                            <li class="active"><a href="#tab1a"><i class="sl sl-icon-action-undo"></i> Arrivals</a></li>
+                                            <li><a href="#tab2a"><i class="sl sl-icon-action-redo"></i> Departures</a></li>
+                                        </ul>
+                                        <!-- Tabs Content -->
+                                        <div class="tabs-container">
+                                            <div class="tab-content" id="tab1a">
+
+                                                <p:tab title="Arrivals"  titleStyle="float:center">
+
+                                                    <p:dataTable 
+                                                        id="journey"
+                                                        var="journey" 
+                                                        value="#{cRMbean.journeyModel}" 
+                                                        selectionMode="single" 
+                                                        selection="#{cRMbean.selectedJourney}" 
+                                                        rowKey="#{journey.journeysid}"
+                            
+                                                        >
+                                                        <p:column headerText="Trip">
+                                                            <h:outputText value="#{journey.tripname}" />
+                                                        </p:column>
+
+                                                        <p:column headerText="Set off date">
+                                                            <h:outputText value="#{journey.setoffdate}" />
+                                                        </p:column>
+
+                                                        <p:column headerText="Remarks">
+                                                            <h:outputText value="#{journey.remarks}" />
+                                                        </p:column>                                    
+
+                                                        <p:column headerText="Arrival date">
+                                                            <h:outputText value="#{journey.arrivaldate}" />
+                                                        </p:column>   
+
+
+                                                        <p:column headerText="Action">
+
+                                                            <p:linkButton outcome="/loacteonmap" value="view location" style="margin-right:20px;margin-bottom:5px;;padding-left: 20px;padding-right: 20px;padding-top: 5px;padding-bottom: 5px">
+                                                            </p:linkButton>
+
+                                                        </p:column>
+
+                                                    </p:dataTable>
+                                                </p:tab>
+                                            </div>                                        
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p:tab title="Departure">
+
+                        <p:dataTable 
+                            id = "trip" 
+                            var="trip"                                 
+                            value="#{cRMbean.tripModel}"
+                            selectionMode="single" 
+                            selection="#{cRMbean.selectedTrip}" 
+                            rowKey="#{trip.tripsid}"
+                            
+                            >
+
+                            <p:column headerText="bus number" colspan="2">
+                                <h:outputText value="#{trip.busname}" />
+                            </p:column>
+
+                            <p:column headerText="Destination">
+                                <h:outputText value="#{trip.destinations}" />
+                            </p:column>
+
+                            <p:column headerText="Trip Date">
+                                <h:outputText value="#{trip.tripdate}" />
+                            </p:column>
+
+                            <p:column headerText="Pickup location">
+                                <h:outputText value="#{trip.pickuplocation}" />
+                            </p:column>
+                            <p:column headerText="Fare">
+                                <h:outputText value="#{trip.prices}" />
+                            </p:column>
+
+                            <p:column headerText="Departure to pickup time">
+                                <h:outputText value="#{trip.departuretopickuptime}" />
+                            </p:column>
+
+                            <p:column headerText="Drop points">
+                                <h:outputText value="#{trip.droppoints}" />
+                            </p:column>
+
+                            <p:column headerText="Rest points">
+                                <h:outputText value="#{trip.restpoints}" />
+                            </p:column>
+
+                            <p:column headerText="Price per kg">
+                                <h:outputText value="#{trip.priceperkg}" />
+                            </p:column>
+
+                            <p:column headerText="Pickup point">
+                                <h:outputText value="#{trip.pickuppoint}" />
+                            </p:column>
+
+                            <p:column headerText="Action">
+<p:commandButton  
+                                        value="Booking now" 
+                                        id="indexbooking4" 
+                                        action="#{indexBean.submitButtonAction}" 
+                                        />
+    
+                            </p:column>
+
+                        </p:dataTable>
+                    </p:tab> 
+                </p:tabView>
+                <p:spacer  width="100" />
+            </h:form>
+            <!-- Container -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="headline centered margin-bottom-35 margin-top-10">Most Popular Places <span>Tourist Cities in Ghana</span></h3>
+                    </div>
+                    <div class="col-md-4">
+                        <!-- Image Box -->
+                        <a href="#" class="img-box" data-background-image="images/kakum.jpg">
+                            <!-- Badge -->
+                            <div class="img-box-content visible">
+                                <h4>Kakum Canopy Walk</h4>
+                                <span>Assin-South</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-8">
+                        <!-- Image Box -->
+                        <a href="#" class="img-box" data-background-image="images/ghana-banner.jpg">
+                            <div class="img-box-content visible">
+                                <h4>Kwame Nkrumah Musuem</h4>
+                                <span>Accra</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-8">
+                        <!-- Image Box -->
+                        <a href="#" class="img-box" data-background-image="images/castle.jpg">
+                            <div class="img-box-content visible">
+                                <h4>Cape Coast Castle</h4>
+                                <span>Cape Coast</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <!-- Image Box -->
+                        <a href="#" class="img-box" data-background-image="images/afadjato.png">
+                            <div class="img-box-content visible">
+                                <h4>Mount Afadjato</h4>
+                                <span>Volta Region</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Container / End -->
+            <!-- Flip banner -->
+            <a href="#" class="flip-banner parallax" data-background="images/flip-banner-bg.jpg" data-color="#274abb" data-color-opacity="0.9" data-img-width="2500" data-img-height="1600">
+                <div class="flip-banner-content">
+                    <h2 class="flip-visible">We help people find the right the trips</h2>
+                    <h2 class="flip-hidden">Browse Transport Companies <i class="sl sl-icon-arrow-right"></i></h2>
+                </div>
+            </a>
+            <!-- Flip banner / End -->
+            <!-- Footer
+    ================================================== -->
+            <div id="footer" class="sticky-footer">
+                <!-- Main -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5 col-sm-6">
+                            <img class="footer-logo" src="images/logo.jpg" alt=""/>
+                            <br></br>
+                            <br></br> 
+                            <p>Morbi convallis bibendum urna ut viverra. Maecenas quis consequat libero, a feugiat eros. Nunc ut lacinia tortor morbi ultricies laoreet ullamcorper phasellus semper.</p>
+                        </div>
+                        <div class="col-md-4 col-sm-6 ">
+                            <h4>Helpful Links</h4>
+                            <ul class="footer-links">
+                                <li ><a href="#">Login</a></li>
+                                <li><a href="#">Sign Up</a></li>
+                                <li><a href="#">My Account</a></li>
+                                <li><a href="#">Add Property</a></li>
+                                <li><a href="#">Pricing</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                            </ul>
+                            <ul class="footer-links">
+                                <li><a href="#">FAQ</a></li>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">Our Agents</a></li>
+                                <li><a href="#">How It Works</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="col-md-3  col-sm-12">
+                            <h4>Contact Us</h4>
+                            <div class="text-widget">
+                                <span>12345 Little Lonsdale St, Melbourne</span> 
+                                <br></br>
+                                Phone: <span>(123) 123-456 </span>
+                                <br></br>
+                                E-Mail:<span> <a href="#"><span class="__cf_email__" data-cfemail="204f4646494345604558414d504c450e434f4d">[email#160;protected]</span></a> </span><br></br>
+                            </div>
+                            <ul class="social-icons margin-top-20">
+                                <li><a class="facebook" href="addbooking.xhtml"><i class="icon-facebook"></i></a></li>
+                                <li><a class="twitter" href="#"><i class="icon-twitter"></i></a></li>
+                                <li><a class="gplus" href="#"><i class="icon-gplus"></i></a></li>
+                                <li><a class="vimeo" href="#"><i class="icon-vimeo"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Copyright -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="copyrights">© 2020 Bus Scheduler. All Rights Reserved.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer / End -->
+            <!-- Back To Top Button -->
+            <div id="backtotop"><a href="#"></a></div>
+            <!-- Scripts
+    ================================================== -->
+            <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+            <script type="text/javascript" src="scripts/jquery-2.2.0.min.js"></script>
+            <script type="text/javascript" src="scripts/chosen.min.js"></script>
+            <script type="text/javascript" src="scripts/magnific-popup.min.js"></script>
+            <script type="text/javascript" src="scripts/owl.carousel.min.js"></script>
+            <script type="text/javascript" src="scripts/rangeSlider.js"></script>
+            <script type="text/javascript" src="scripts/sticky-kit.min.js"></script>
+            <script type="text/javascript" src="scripts/slick.min.js"></script>
+            <script type="text/javascript" src="scripts/masonry.min.js"></script>
+            <script type="text/javascript" src="scripts/mmenu.min.js"></script>
+            <script type="text/javascript" src="scripts/tooltips.min.js"></script>
+            <script type="text/javascript" src="scripts/custom.js"></script>
+            <!-- Style Switcher
+    ================================================== -->
+        </div>
+        <!-- Wrapper / End -->
+    </body>
+
+</html>

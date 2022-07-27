@@ -1,0 +1,74 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui" template="/WEB-INF/template.xhtml">
+
+    <ui:define name="title">Dashboard</ui:define>
+    <ui:define name="viewname">
+        <li>Dashboard</li>
+        <li>
+            <p:link outcome="/dashboard">Default</p:link>
+        </li>
+    </ui:define>
+    <ui:define name="content">
+
+        <h:form id="form"> 
+            <div class="p-grid ui-fluid">
+                <div class="p-col-12">
+
+                    <!--<p:panelGrid columns="1" columnClasses="ui-g-12 ui-md-2,ui-g-12 ui-md-4,ui-g-12 ui-md-2 ui-grc-2,ui-g-12 ui-md-4" layout="grid" styleClass="ui-panelgrid-blank">-->
+                    <p:panel header="Sign up">
+                        <div class="p-grid">
+                            <div class="p-col">
+                            </div> 
+                            <div class="p-col " >
+                                <p:panelGrid  columns="2" columnClasses="text-align-right,text-align-left" styleClass="ui-panelgrid-blank">
+                                    <!--<p:panelGrid columns="2">-->
+
+                           
+                                    
+
+ <p:outputLabel 
+                                        for="driversname" 
+                                        value="Driversname"> 
+                                    </p:outputLabel>
+                                    <p:inputText id="driversname" value="#{signupBean.driversname}"/>
+                                    
+ <p:outputLabel 
+                                        for="licences" 
+                                        value="Licences"> 
+                                    </p:outputLabel>
+                                    <p:inputText id="licences" value="#{signupBean.licences}"/>
+                                    
+ <p:outputLabel 
+                                        for="phonenumbers" 
+                                        value="Phonenumbers"> 
+                                    </p:outputLabel>
+                                    <p:inputText id="phonenumbers" value="#{signupBean.phonenumbers}"/>
+                                    
+ <p:outputLabel 
+                                        for="busesid" 
+                                        value="Busesid"> 
+                                    </p:outputLabel>
+                                    <p:inputText id="busesid" value="#{signupBean.busesid}"/>
+                                    
+
+ <p:commandButton  
+                                        value="Create account" 
+                                        id="signupButton" 
+                                        action="#{signupBean.submitButtonAction}" 
+                                        />
+
+
+                                    
+
+                                </p:panelGrid>
+                            </div>
+                            <div class="p-col"></div>
+                        </div>
+                    </p:panel>
+                </div>
+            </div>
+        </h:form>
+    </ui:define>
+</ui:composition>
+

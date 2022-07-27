@@ -1,0 +1,84 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui" template="/WEB-INF/template.xhtml">
+
+    <ui:define name="title">Dashboard</ui:define>
+    <ui:define name="viewname">
+        <li>Dashboard</li>
+        <li>
+            <p:link outcome="/dashboard">Default</p:link>
+        </li>
+    </ui:define>
+    <ui:define name="content">
+
+        <h:form id="form"> 
+            <div class="p-grid ui-fluid">
+                <div class="p-col-12">
+
+                    <!--<p:panelGrid columns="1" columnClasses="ui-g-12 ui-md-2,ui-g-12 ui-md-4,ui-g-12 ui-md-2 ui-grc-2,ui-g-12 ui-md-4" layout="grid" styleClass="ui-panelgrid-blank">-->
+                    <p:panel header="Sign up">
+                        <div class="p-grid">
+                            <div class="p-col">
+                            </div> 
+                            <div class="p-col " >
+                                <p:panelGrid  columns="2" columnClasses="text-align-right,text-align-left" styleClass="ui-panelgrid-blank">
+                                    <!--<p:panelGrid columns="2">-->
+
+
+
+                                    <p:outputLabel 
+                                        for="busesid" 
+                                        value="Busesid"> 
+                                    </p:outputLabel>
+                                    <p:inputText id="busesid" value="#{signupBean.busesid}"/>
+                                    
+
+                                    <p:outputLabel 
+                                        for="types" 
+                                        value="Types"> 
+                                    </p:outputLabel>
+                                    <p:inputText id="types" value="#{signupBean.types}"/>
+                                    
+                                    <p:outputLabel 
+                                        for="numberofseats" 
+                                        value="Numberofseats"> 
+                                    </p:outputLabel>
+                                    <p:inputText id="numberofseats" value="#{signupBean.numberofseats}"/>
+                                    
+                                    <p:outputLabel 
+                                        for="conditions" 
+                                        value="Conditions"> 
+                                    </p:outputLabel>
+                                    <p:inputText id="conditions" value="#{signupBean.conditions}"/>
+                                    
+                                    <p:outputLabel 
+                                        for="colors" 
+                                        value="Colors"> 
+                                    </p:outputLabel>
+                                    <p:inputText id="colors" value="#{signupBean.colors}"/>
+                                    
+                                    <p:outputLabel 
+                                        for="registrationnumbers" 
+                                        value="Registrationnumbers"> 
+                                    </p:outputLabel>
+                                    <p:inputText id="registrationnumbers" value="#{signupBean.registrationnumbers}"/>
+                                    
+                                    <p:outputLabel 
+                                        for="companiesid" 
+                                        value="Companiesid"> 
+                                    </p:outputLabel>
+                                    <p:inputText id="companiesid" value="#{signupBean.companiesid}"/>
+                                    
+
+
+                                </p:panelGrid>
+                            </div>
+                            <div class="p-col"></div>
+                        </div>
+                    </p:panel>
+                </div>
+            </div>
+        </h:form>
+    </ui:define>
+</ui:composition>
+

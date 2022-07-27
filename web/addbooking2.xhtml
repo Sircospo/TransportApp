@@ -1,0 +1,90 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui" template="/WEB-INF/template.xhtml">
+
+    <ui:define name="title">Dashboard</ui:define>
+    <ui:define name="viewname">
+        <li>Dashboard</li>
+        <li>
+            <p:link outcome="/dashboard">Default</p:link>
+        </li>
+    </ui:define>
+    <ui:define name="content">
+
+        <h:form id="form"> 
+              <p:messages id="messages" showDetail="true" closable="true">
+        <p:autoUpdate />
+    </p:messages>
+            <div class="p-grid ui-fluid">
+                <div class="p-col-12">
+
+                    <!--<p:panelGrid columns="1" columnClasses="ui-g-12 ui-md-2,ui-g-12 ui-md-4,ui-g-12 ui-md-2 ui-grc-2,ui-g-12 ui-md-4" layout="grid" styleClass="ui-panelgrid-blank">-->
+                    <p:panel header="Add New Booking">
+                        <div class="p-grid">
+                            <div class="p-col">
+                            </div> 
+                            <div class="p-col " >
+                                <p:panelGrid  columns="2" columnClasses="text-align-right,text-align-left" styleClass="ui-panelgrid-blank">
+                                    <!--<p:panelGrid columns="2">-->
+
+
+
+                                	     <p:outputLabel 
+                                       
+                                        value="Trip"> 
+                                    </p:outputLabel>
+                                    
+                                    
+                                    <p:outputLabel >
+                                       
+                                      <p:selectOneMenu id="trips" value="#{bookingBean.tripname}" required="true" requiredMessage="Please select Trip"  >
+                                        <f:selectItem itemLabel="Select Trip" itemValue="" />
+                                        <f:selectItems value="#{bookingBean.trips}" />
+                                    </p:selectOneMenu>
+
+                                    </p:outputLabel>
+                               
+                                 
+
+
+ 		<!--				     <p:outputLabel 
+                                        for="accounts" 
+                                        value="accounts"> 
+                                    </p:outputLabel>
+                               
+                                    <p:selectOneMenu id="accounts" value="#{bookingBean.accountsid}" >
+                                        <f:selectItem itemLabel="Select Account" itemValue="" />
+                                        <f:selectItems value="#{bookingBean.accounts}" />
+                                    </p:selectOneMenu>    -->
+                                    
+                                    <p:outputLabel 
+                                    for="payments" 
+                                        value="Payments"> 
+                                    </p:outputLabel> 
+                                    <p:selectOneMenu id="payments" value="#{bookingBean.payments}" style="width:125px" >
+            <f:selectItem itemLabel="Select Payment" itemValue="" />
+            <f:selectItem itemLabel="MTN" itemValue="MTN" />
+            <f:selectItem itemLabel="Vodafone" itemValue="Vodafone" />
+            <f:selectItem itemLabel="AirtelTigo" itemValue="AirtelTigo" />
+                                    </p:selectOneMenu>
+                                    
+                                    
+				<p:commandButton  
+                                        value="Create Booking" 
+                                        id="signupButton" 
+                                        action="#{bookingBean.submitButtonAction}" 
+                                        />
+
+
+
+                                </p:panelGrid>
+                            </div>
+                            <div class="p-col"></div>
+                        </div>
+                    </p:panel>
+                </div>
+            </div>
+        </h:form>
+    </ui:define>
+</ui:composition>
+

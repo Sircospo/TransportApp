@@ -1,0 +1,70 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui" template="/WEB-INF/template.xhtml">
+
+    <ui:define name="title">Dashboard</ui:define>
+    <ui:define name="viewname">
+        <li>Dashboard</li>
+        <li>
+            <p:link outcome="/dashboard">Default</p:link>
+        </li>
+    </ui:define>
+    <ui:define name="content">
+
+        <h:form id="form"> 
+            <div class="p-grid ui-fluid">
+                <div class="p-col-12">
+
+                    <!--<p:panelGrid columns="1" columnClasses="ui-g-12 ui-md-2,ui-g-12 ui-md-4,ui-g-12 ui-md-2 ui-grc-2,ui-g-12 ui-md-4" layout="grid" styleClass="ui-panelgrid-blank">-->
+                    <p:panel header="Sign up">
+                        <div class="p-grid">
+                            <div class="p-col">
+                            </div> 
+                            <div class="p-col " >
+                                <p:panelGrid  columns="2" columnClasses="text-align-right,text-align-left" styleClass="ui-panelgrid-blank">
+                                    <!--<p:panelGrid columns="2">-->
+
+                                    <p:outputLabel 
+                                        for="pickuppoint" 
+                                        value="Pickuppoint"> 
+                                    </p:outputLabel>
+                                    <p:inputText id="pickuppoint" value="#{signupBean.pickuppoint}"/>
+
+                                    <p:outputLabel 
+                                        for="googlemap" 
+                                        value="Googlemap"> 
+                                    </p:outputLabel>
+                                    <p:inputText id="googlemap" value="#{signupBean.googlemap}"/>
+
+                                    <p:outputLabel 
+                                        for="remarks" 
+                                        value="Remarks"> 
+                                    </p:outputLabel>
+                                    <p:inputText id="remarks" value="#{signupBean.remarks}"/>
+
+                                    <p:outputLabel 
+                                        for="tripsid" 
+                                        value="Tripsid"> 
+                                    </p:outputLabel>
+                                    <p:inputText id="tripsid" value="#{signupBean.tripsid}"/>
+
+
+<p:commandButton  
+                                        value="Create account" 
+                                        id="signupButton" 
+                                        action="#{signupBean.submitButtonAction}" 
+                                        />
+
+
+
+                                </p:panelGrid>
+                            </div>
+                            <div class="p-col"></div>
+                        </div>
+                    </p:panel>
+                </div>
+            </div>
+        </h:form>
+    </ui:define>
+</ui:composition>
+

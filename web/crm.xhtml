@@ -1,0 +1,445 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui" template="/WEB-INF/template_2.xhtml">
+
+    <ui:define name="title">Dashboard</ui:define>
+    <ui:define name="viewname">
+        <li>Dashboard</li>
+        <li>
+            <p:link outcome="/dashboard">Customer Relationship Management</p:link>
+        </li>
+    </ui:define>
+    <ui:define name="content">
+        <h:form id = "form"> 
+            <div class="p-grid">
+                <div class="p-col">
+                </div> 
+                <div class="p-col">
+
+
+                </div> 
+                <div class="p-col">
+                </div> 
+            </div> 
+            <p:tabView id = "tabview"   > 
+
+
+                <p:tab   title="Company">
+
+                    <p:linkButton outcome="/addcompany" value="New Company" style="margin-right:20px;margin-bottom:5px;;padding-left: 20px;padding-right: 20px;padding-top: 5px;padding-bottom: 5px">
+                    </p:linkButton>
+
+                    <p:dataTable 
+                        id="company"
+                        var="company" 
+                        value="#{cRMbean.companyModel}" 
+                        >
+                        <p:column headerText="Company ID">
+                            <h:outputText value="#{company.companyid}" />
+                        </p:column>
+
+                        <p:column headerText="Company name">
+                            <h:outputText value="#{company.companyname}" />
+                        </p:column>
+
+                        <p:column headerText="Company location">
+                            <h:outputText value="#{company.location}" />
+                        </p:column>
+
+                        <p:column headerText="Google map">
+                            <h:outputText value="#{company.googlemap}" />
+                        </p:column>
+
+                        <p:column headerText="Company phone number">
+                            <h:outputText value="#{company.phone}" />
+                        </p:column>
+
+                        <p:column headerText="Company email">
+                            <h:outputText value="#{company.email}" />
+                        </p:column>
+
+                        <p:column headerText="Company rating">
+                            <h:outputText value="#{company.rating}" />
+                        </p:column>
+
+                        <p:column headerText="Company office number">
+                            <h:outputText value="#{company.officenumber}" />
+                        </p:column>
+
+                        <p:column headerText="Action">
+                            <p:linkButton outcome="/editcompany" value="Edit" style="margin-right:20px;margin-bottom:5px;">
+                            </p:linkButton>
+                            <p:commandButton  
+                                value="Delete" 
+                                id="driverdelete"                     
+                                action="#{cRMbean.deleteAction}" 
+                                />
+                        </p:column>
+
+
+
+                    </p:dataTable>
+                </p:tab>
+
+                <p:tab   title="Drivers">
+
+                    <p:linkButton outcome="/adddriver" value="New Driver" style="margin-right:20px;margin-bottom:5px;;padding-left: 20px;padding-right: 20px;padding-top: 5px;padding-bottom: 5px">
+                    </p:linkButton>
+
+                    <p:dataTable 
+                        id="driver"
+                        var="driver" 
+                        value="#{cRMbean.driverModel}" 
+                        >
+                        <p:column headerText="Driver ID">
+                            <h:outputText value="#{driver.driversid}" />
+                        </p:column>
+
+                        <p:column headerText="Driver name">
+                            <h:outputText value="#{driver.driversname}" />
+                        </p:column>
+
+                        <p:column headerText="License number">
+                            <h:outputText value="#{driver.licences}" />
+                        </p:column>
+
+                        <p:column headerText="Phone number">
+                            <h:outputText value="#{driver.phonenumbers}" />
+                        </p:column>
+
+                        <p:column headerText="Bus driven">
+                            <h:outputText value="#{driver.busname}" />
+                        </p:column>
+
+                        <p:column headerText="Action">
+                            <p:linkButton outcome="/editdriver" value="Edit" style="margin-right:20px;margin-bottom:5px;">
+                            </p:linkButton>
+                            <p:commandButton  
+                                value="Delete" 
+                                id="driverdelete"                     
+                                action="#{cRMbean.deleteAction}" 
+                                />
+                        </p:column>
+
+
+
+                    </p:dataTable>
+                </p:tab>
+                <p:tab   title="Journeys">
+                    <p:linkButton outcome="/addjourney" value="New Journey" style="margin-right:20px;margin-bottom:5px;;padding-left: 20px;padding-right: 20px;padding-top: 5px;padding-bottom: 5px">
+                    </p:linkButton>
+                    <p:dataTable 
+                        id="journey"
+                        var="journey" 
+                        value="#{cRMbean.journeyModel}" 
+
+
+                        >
+
+
+                        <p:column headerText="Journey Id">
+                            <h:outputText value="#{journey.journeysid}" />
+                        </p:column>
+
+                        <p:column headerText="Trip">
+                            <h:outputText value="#{journey.tripname}" />
+                        </p:column>
+
+                        <p:column headerText="Set off date">
+                            <h:outputText value="#{journey.setoffdate}" />
+                        </p:column>
+
+                        <p:column headerText="Remarks">
+                            <h:outputText value="#{journey.remarks}" />
+                        </p:column>
+
+                        <p:column headerText="Ratings">
+                            <h:outputText value="#{journey.ratings}" />
+                        </p:column>
+
+                        <p:column headerText="Arrival date">
+                            <h:outputText value="#{journey.arrivaldate}" />
+                        </p:column>
+                        <p:column headerText="Action">
+                            <p:linkButton outcome="/editdriver" value="Edit" style="margin-right:20px;margin-bottom:5px;">
+                            </p:linkButton>
+                            <p:commandButton  
+                                value="Delete" 
+                                id="journeydelete"                     
+                                action="#{cRMbean.deleteAction}" 
+                                />
+                        </p:column>
+
+                    </p:dataTable>
+                </p:tab>
+                <p:tab   title="Accounts">
+                    <p:linkButton outcome="/addaccount" value="New Account" style="margin-right:20px;margin-bottom:5px;;padding-left: 20px;padding-right: 20px;padding-top: 5px;padding-bottom: 5px">
+                    </p:linkButton>
+                    <p:dataTable 
+                        id="account"
+                        var="account" 
+                        value="#{cRMbean.accountModel}" 
+                        selectionMode="single" 
+                        selection="#{cRMbean.selectedAccount}" 
+                        rowKey="#{account.accountid}"
+                        >
+                        <p:column headerText="Account Id">
+                            <h:outputText value="#{account.accountid}" />
+                        </p:column>
+
+                        <p:column headerText="email">
+                            <h:outputText value="#{account.email}" />
+                        </p:column>
+
+                        <p:column headerText="Account Type">
+                            <h:outputText value="#{account.type}" />
+                        </p:column>
+                        <p:column headerText="Action">
+
+                            <p:commandButton update=":form:accountDetail" oncomplete="PF('accountDialog').show()" icon="pi pi-search" title="View">
+                                <f:setPropertyActionListener value="#{account}" target="#{cRMbean.selectedAccount}" />
+                            </p:commandButton>
+
+
+
+                            <p:commandButton  
+                                value="Delete" 
+                                id="acountdelete"                      
+                                action="#{cRMbean.deleteAccountAction()}" 
+                                />
+                        </p:column>
+
+                    </p:dataTable>
+                </p:tab>
+                <p:tab   title="Pick up locations">
+                    <p:linkButton outcome="/addpickup" value="New Pickup Location" style="margin-right:20px;margin-bottom:5px;;padding-left: 20px;padding-right: 20px;padding-top: 5px;padding-bottom: 5px">
+                    </p:linkButton>
+                    <p:dataTable 
+                        id="pickup"
+                        var="pickup" 
+                        value="#{cRMbean.pickuplocationModel}" 
+
+
+                        >
+
+
+                        <p:column headerText="Pickup location Id">
+                            <h:outputText value="#{pickup.pickuplocationsid}" />
+                        </p:column>
+
+                        <p:column headerText="Pickup name">
+                            <h:outputText value="#{pickup.pickuppoint}" />
+                        </p:column>
+
+                        <p:column headerText="Google maps location">
+                            <h:outputText value="#{pickup.googlemap}" />
+                        </p:column>
+
+                        <p:column headerText="Remarks">
+                            <h:outputText value="#{pickup.remarks}" />
+                        </p:column>
+
+                        <p:column headerText="Trip name">
+                            <h:outputText value="#{pickup.tripname}" />
+                        </p:column>
+
+                        <p:column headerText="Action">
+                            <p:linkButton outcome="/edittrip" value="Edit" style="margin-right:20px;margin-bottom:5px;">
+                            </p:linkButton>
+                            <p:commandButton  
+                                value="Delete" 
+                                id="tripdelete"                     
+                                action="#{cRMbean.deleteAction}" 
+                                />
+                        </p:column>
+
+
+                    </p:dataTable>
+                </p:tab>
+                <p:tab  id = "tab" title="Bookings">
+                    <p:linkButton outcome="/addbooking" value="New Booking" style="margin-right:20px;margin-bottom:5px;;padding-left: 20px;padding-right: 20px;padding-top: 5px;padding-bottom: 5px">
+                    </p:linkButton>
+                    <p:dataTable 
+                        id="booking"
+                        var="booking" 
+                        value="#{cRMbean.bookingModel}" 
+                        >
+
+
+                        <p:column headerText="Bookings Id">
+                            <h:outputText value="#{booking.bookingsid}" />
+                        </p:column>
+
+                        <p:column headerText="Trip name">
+                            <h:outputText value="#{booking.tripname}" />
+                        </p:column>
+
+                        <p:column headerText="Payment">
+                            <h:outputText value="#{booking.payments}" />
+                        </p:column>
+                        <p:column headerText="Action">
+                            <p:linkButton outcome="/editbooking" value="Edit" style="margin-right:20px;margin-bottom:5px;">
+                            </p:linkButton>
+                            <p:commandButton  
+                                value="Delete" 
+                                id="bookingdelete"                     
+                                action="#{cRMbean.deleteAction}" 
+                                />
+                        </p:column>
+
+                    </p:dataTable>
+                </p:tab>
+                <p:tab title="Rest Points">
+                    <p:linkButton outcome="/addrestpoint" value="New Rest Point" style="margin-right:20px;margin-bottom:5px;;padding-left: 20px;padding-right: 20px;padding-top: 5px;padding-bottom: 5px">
+                    </p:linkButton>
+                    <p:dataTable 
+                        id = "rest" 
+                        var="rest"                                 
+                        value="#{cRMbean.restpointModel}"
+
+
+                        >
+                        <p:column headerText="Restpoint Id">
+                            <h:outputText value="#{rest.restpointid}" />
+                        </p:column>
+
+                        <p:column headerText="Rest point name">
+                            <h:outputText value="#{rest.remarks}" />
+                        </p:column>
+
+                        <p:column headerText="Google map location">
+                            <h:outputText value="#{rest.googlemap}" />
+                        </p:column>
+
+                        <p:column headerText="Action">
+                            <p:linkButton outcome="/editrestpoint" value="Edit" style="margin-right:20px;margin-bottom:5px;">
+                            </p:linkButton>
+                            <p:commandButton  
+                                value="Delete" 
+                                id="restdelete"                     
+                                action="#{cRMbean.deleteAction}" 
+                                />
+                        </p:column>
+                    </p:dataTable>
+                </p:tab> 
+                <p:tab title="Trips">
+                    <p:linkButton outcome="/addtrip" value="New Trip" style="margin-right:20px;margin-bottom:5px;;padding-left: 20px;padding-right: 20px;padding-top: 5px;padding-bottom: 5px">
+                    </p:linkButton>
+                    <p:dataTable 
+                        id = "trip" 
+                        var="trip"                                 
+                        value="#{cRMbean.tripModel}"
+
+
+                        >
+                        <p:column headerText="Trip id">
+                            <h:outputText value="#{trip.tripsid}" />
+                        </p:column>
+
+                        <p:column headerText="Pickup location">
+                            <h:outputText value="#{trip.pickuplocation}" />
+                        </p:column>
+
+                        <p:column headerText="Destination">
+                            <h:outputText value="#{trip.destinations}" />
+                        </p:column>
+
+                        <p:column headerText="Trip Date">
+                            <h:outputText value="#{trip.tripdate}" />
+                        </p:column>
+
+                        <p:column headerText="Drop points">
+                            <h:outputText value="#{trip.droppoints}" />
+                        </p:column>
+
+                        <p:column headerText="Rest points">
+                            <h:outputText value="#{trip.restpoints}" />
+                        </p:column>
+
+
+                        <p:column headerText="Price per kg">
+                            <h:outputText value="#{trip.priceperkg}" />
+                        </p:column>
+
+                        <p:column headerText="Pickup point">
+                            <h:outputText value="#{trip.pickuppoint}" />
+                        </p:column>
+
+                        <p:column headerText="Departure to pickup time">
+                            <h:outputText value="#{trip.departuretopickuptime}" />
+                        </p:column>
+
+                        <p:column headerText="Fare">
+                            <h:outputText value="#{trip.prices}" />
+                        </p:column>
+
+                        <p:column headerText="bus number">
+                            <h:outputText value="#{trip.busname}" />
+                        </p:column>
+                        <p:column headerText="Action">
+                            <p:linkButton outcome="/edittrip" value="Edit" style="margin-right:20px;margin-bottom:5px;">
+                            </p:linkButton>
+                            <p:commandButton  
+                                value="Delete" 
+                                id="tripdelete"                     
+                                action="#{cRMbean.deleteAction}" 
+                                />
+                        </p:column>
+
+                    </p:dataTable>
+                </p:tab> 
+
+            </p:tabView>
+
+
+            <p:dialog header="Account Info" widgetVar="accountDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+                <div class="p-grid ui-fluid">
+                    <div class="p-col-12">
+
+                        <!--<p:panelGrid columns="1" columnClasses="ui-g-12 ui-md-2,ui-g-12 ui-md-4,ui-g-12 ui-md-2 ui-grc-2,ui-g-12 ui-md-4" layout="grid" styleClass="ui-panelgrid-blank">-->
+                        <p:panel header="Sign up">
+                            <div class="p-grid">
+                                <div class="p-col">
+                                </div> 
+                                <div class="p-col " >
+                                    <p:outputPanel id="accountDetail" style="text-align:center;">
+                                        <p:panelGrid  columns="2" rendered="#{not empty cRMbean.selectedAccount}" columnClasses="text-align-right,text-align-left" styleClass="ui-panelgrid-blank">
+                                            <!--<p:panelGrid columns="2">-->
+                                            <p:outputLabel 
+                                                for="email" 
+                                                value="Email"> 
+                                            </p:outputLabel>
+                                            <p:inputText id="email" value="#{cRMbean.selectedAccount.email}"/>
+
+                                            <p:outputLabel 
+                                                for="password" 
+                                                value="Password"> 
+                                            </p:outputLabel>
+                                            <p:inputText id="password" value="#{cRMbean.selectedAccount.password}"/>
+
+                                            <p:outputLabel 
+                                                for="type" 
+                                                value="Type"> 
+                                            </p:outputLabel>
+                                            <p:inputText id="type" value="#{cRMbean.selectedAccount.type}"/>
+
+                                            <p:commandButton  
+                                                value="Update account" 
+                                                id="signupButton" 
+                                                action="#{accountBean.updateButtonAction}" 
+                                                />
+                                        </p:panelGrid>
+                                    </p:outputPanel>
+                                </div>
+                                <div class="p-col"></div>
+                            </div>
+                        </p:panel>
+                    </div>
+                </div>
+            </p:dialog>
+
+
+
+        </h:form>
+    </ui:define>
+</ui:composition>

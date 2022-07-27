@@ -1,0 +1,399 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui" template="/WEB-INF/template_3.xhtml">
+
+    <ui:define name="title">Dashboard</ui:define>
+    <ui:define name="viewname">
+        <li>Dashboard</li>
+        <li>
+            <p:link outcome="/dashboard">Default</p:link>
+        </li>
+    </ui:define>
+    <ui:define name="head">
+        <h:outputScript name="chartjs/chart.js" library="demo" />
+        <script type="text/javascript">
+            $(function () {
+                var ctx = document.getElementById("dashboard-chart").getContext('2d');
+                var myChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                        datasets: [{
+                                label: 'Ghana',
+                                data: [12, 19, 3, 5, 2, 3, 9],
+                                borderColor: [
+                                    '#fd4a85',
+                                ],
+                                borderWidth: 3,
+                                borderDash: [5, 5],
+                                fill: false,
+                                pointRadius: 3
+                            }, {
+                                label: 'Cote d ivore',
+                                data: [1, 2, 5, 3, 12, 7, 15],
+                                borderColor: [
+                                    '#12aeee',
+                                ],
+                                borderWidth: 3,
+                                fill: false
+                            },
+                            {
+                                label: 'Burkina Faso',
+                                data: [7, 12, 15, 5, 3, 13, 21],
+                                borderColor: [
+                                    '#a054e5',
+                                ],
+                                borderWidth: 3,
+                                fill: false,
+                                pointRadius: [4, 6, 4, 12, 8, 0, 4]
+                            },
+                            {
+                                label: 'Congo',
+                                data: [3, 7, 2, 17, 15, 13, 19],
+                                borderColor: [
+                                    '#f8c336',
+                                ],
+                                borderWidth: 3,
+                                fill: false
+                            }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: true,
+                        fontFamily: "'Candara', 'Calibri', 'Courier', 'serif'",
+                        hover: {
+                            mode: 'index'
+                        }
+                    }
+                });
+            });
+        </script>
+        <script type="text/javascript">
+            $(function () {
+                var ctx = document.getElementById("dashboard-chart2").getContext('2d');
+                var myChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                        datasets: [{
+                                label: 'Ghana',
+                                data: [12, 19, 3, 5, 2, 3, 9],
+                                borderColor: [
+                                    '#fd4a85',
+                                ],
+                                borderWidth: 3,
+                                borderDash: [5, 5],
+                                fill: false,
+                                pointRadius: 3
+                            }, {
+                                label: 'Cote d ivore',
+                                data: [1, 2, 5, 3, 12, 7, 15],
+                                borderColor: [
+                                    '#12aeee',
+                                ],
+                                borderWidth: 3,
+                                fill: false
+                            },
+                            {
+                                label: 'Burkina Faso',
+                                data: [7, 12, 15, 5, 3, 13, 21],
+                                borderColor: [
+                                    '#a054e5',
+                                ],
+                                borderWidth: 3,
+                                fill: false,
+                                pointRadius: [4, 6, 4, 12, 8, 0, 4]
+                            },
+                            {
+                                label: 'Congo',
+                                data: [3, 7, 2, 17, 15, 13, 19],
+                                borderColor: [
+                                    '#f8c336',
+                                ],
+                                borderWidth: 3,
+                                fill: false
+                            }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: true,
+                        fontFamily: "'Candara', 'Calibri', 'Courier', 'serif'",
+                        hover: {
+                            mode: 'index'
+                        }
+                    }
+                });
+            });
+        </script>
+        <script type="text/javascript">
+            $(function () {
+                var ctx = document.getElementById("dashboard-chart3").getContext('2d');
+                var myChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                        datasets: [{
+                                label: 'Ghana',
+                                data: [12, 19, 3, 5, 2, 3, 9],
+                                borderColor: [
+                                    '#fd4a85',
+                                ],
+                                borderWidth: 3,
+                                borderDash: [5, 5],
+                                fill: false,
+                                pointRadius: 3
+                            }, {
+                                label: 'Cote d ivore',
+                                data: [1, 2, 5, 3, 12, 7, 15],
+                                borderColor: [
+                                    '#12aeee',
+                                ],
+                                borderWidth: 3,
+                                fill: false
+                            },
+                            {
+                                label: 'Burkina Faso',
+                                data: [7, 12, 15, 5, 3, 13, 21],
+                                borderColor: [
+                                    '#a054e5',
+                                ],
+                                borderWidth: 3,
+                                fill: false,
+                                pointRadius: [4, 6, 4, 12, 8, 0, 4]
+                            },
+                            {
+                                label: 'Congo',
+                                data: [3, 7, 2, 17, 15, 13, 19],
+                                borderColor: [
+                                    '#f8c336',
+                                ],
+                                borderWidth: 3,
+                                fill: false
+                            }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: true,
+                        fontFamily: "'Candara', 'Calibri', 'Courier', 'serif'",
+                        hover: {
+                            mode: 'index'
+                        }
+                    }
+                });
+            });
+        </script>
+    </ui:define>
+
+    <ui:define name="content">
+        <div class="layout-dashboard">
+            <div class="p-grid">
+                <div class="p-col-12 p-md-6 p-lg-3">
+                    <div class="overview-box  box-sales">
+                        <div class="overview-box-icon">
+                            <i class="fa fa-usd"></i>
+                        </div>
+                        <div class="overview-box-title">Number of users</div>
+                        <div class="overview-box-value">$ 92,440 </div>
+                        <div class="overview-box-status"><b>20%</b> more than yesterday</div>
+                    </div>
+                </div>
+
+                <div class="p-col-12 p-md-6 p-lg-3">
+                    <div class="overview-box  box-views">
+                        <div class="overview-box-icon">
+                            <i class="fa fa-search"></i>
+                        </div>
+                        <div class="overview-box-title">Number Of Cards</div>
+                        <div class="overview-box-value">7,029</div>
+                        <div class="overview-box-status"><b>7%</b> more than yesterday </div>
+                    </div>
+                </div>
+
+                <div class="p-col-12 p-md-6 p-lg-3">
+                    <div class="overview-box  box-users">
+                        <div class="overview-box-icon">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <div class="overview-box-title">Total Funding</div>
+                        <div class="overview-box-value">9,522</div>
+                        <div class="overview-box-status"><b>12%</b> more than yesterday </div>
+                    </div>
+                </div>
+
+                <div class="p-col-12 p-md-6 p-lg-3">
+                    <div class="overview-box  box-checkins">
+                        <div class="overview-box-icon">
+                            <i class="fa fa-map-marker"></i>
+                        </div>
+                        <div class="overview-box-title">Total Revenue</div>
+                        <div class="overview-box-value">8,596</div>
+                        <div class="overview-box-status"><b>3%</b> more than yesterday </div>
+                    </div>
+                </div>
+                <div class="p-col-12 p-lg-4">
+                    <div class="card donut ">
+                        <h1 style="margin-top:0">Cards Per Bank</h1>
+                        <div class="container">
+                            <div class="donut-chart">
+                                <p>%48</p>
+                                <p>%16</p>
+                                <p>%33</p>
+                                <p>%6</p>
+                                <div class="part1 portion-block">
+                                    <div class="circle"></div>
+                                </div>
+                                <div class="part2 portion-block">
+                                    <div class="circle"></div>
+                                </div>
+                                <div class="part3 portion-block">
+                                    <div class="circle"></div>
+                                </div>
+                                <div class="part4 portion-block">
+                                    <div class="circle"></div>
+                                </div>
+                                <div class="part5 portion-block">
+                                    <div class="circle"></div>
+                                </div>
+                                <p class="center">$23,904<span>Total</span></p>
+                            </div>
+                            <div class="donut-chart-titles">
+                                <div class="detail1 title">
+                                    <div class="color-code"></div>
+                                    <p>Detail 1</p>
+                                </div>
+                                <div class="detail2 title">
+                                    <div class="color-code"></div>
+                                    <p>Detail 2</p>
+                                </div>
+                                <div class="detail3 title">
+                                    <div class="color-code"></div>
+                                    <p>Detail 3</p>
+                                </div>
+                                <div class="detail4 title">
+                                    <div class="color-code"></div>
+                                    <p>Detail 4</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-col-12 p-lg-4">
+                    <div class="card donut ">
+                        <h1 style="margin-top:0">Fundings Per Bank</h1>
+                        <div class="container">
+                            <div class="donut-chart">
+                                <p>%48</p>
+                                <p>%16</p>
+                                <p>%33</p>
+                                <p>%6</p>
+                                <div class="part1 portion-block">
+                                    <div class="circle"></div>
+                                </div>
+                                <div class="part2 portion-block">
+                                    <div class="circle"></div>
+                                </div>
+                                <div class="part3 portion-block">
+                                    <div class="circle"></div>
+                                </div>
+                                <div class="part4 portion-block">
+                                    <div class="circle"></div>
+                                </div>
+                                <div class="part5 portion-block">
+                                    <div class="circle"></div>
+                                </div>
+                                <p class="center">$23,904<span>Total</span></p>
+                            </div>
+                            <div class="donut-chart-titles">
+                                <div class="detail1 title">
+                                    <div class="color-code"></div>
+                                    <p>Detail 1</p>
+                                </div>
+                                <div class="detail2 title">
+                                    <div class="color-code"></div>
+                                    <p>Detail 2</p>
+                                </div>
+                                <div class="detail3 title">
+                                    <div class="color-code"></div>
+                                    <p>Detail 3</p>
+                                </div>
+                                <div class="detail4 title">
+                                    <div class="color-code"></div>
+                                    <p>Detail 4</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-col-12 p-lg-4">
+                    <div class="card donut ">
+                        <h1 style="margin-top:0">Revenue Per Bank</h1>
+                        <div class="container">
+                            <div class="donut-chart">
+                                <p>%48</p>
+                                <p>%16</p>
+                                <p>%33</p>
+                                <p>%6</p>
+                                <div class="part1 portion-block">
+                                    <div class="circle"></div>
+                                </div>
+                                <div class="part2 portion-block">
+                                    <div class="circle"></div>
+                                </div>
+                                <div class="part3 portion-block">
+                                    <div class="circle"></div>
+                                </div>
+                                <div class="part4 portion-block">
+                                    <div class="circle"></div>
+                                </div>
+                                <div class="part5 portion-block">
+                                    <div class="circle"></div>
+                                </div>
+                                <p class="center">$23,904<span>Total</span></p>
+                            </div>
+                            <div class="donut-chart-titles">
+                                <div class="detail1 title">
+                                    <div class="color-code"></div>
+                                    <p>Detail 1</p>
+                                </div>
+                                <div class="detail2 title">
+                                    <div class="color-code"></div>
+                                    <p>Detail 2</p>
+                                </div>
+                                <div class="detail3 title">
+                                    <div class="color-code"></div>
+                                    <p>Detail 3</p>
+                                </div>
+                                <div class="detail4 title">
+                                    <div class="color-code"></div>
+                                    <p>Detail 4</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-col-12 p-lg-4">
+                    <div class="card chart">
+                        <h1 style="margin-top:0">Cards Per Month</h1>
+                        <canvas id="dashboard-chart"></canvas>
+                    </div>
+                </div>
+
+                <div class="p-col-12 p-lg-4">
+                    <div class="card chart">
+                        <h1 style="margin-top:0">Fundings Per Month</h1>
+                        <canvas id="dashboard-chart2"></canvas>
+                    </div>
+                </div>
+
+                <div class="p-col-12 p-lg-4">
+                    <div class="card chart">
+                        <h1 style="margin-top:0">Revenue Per Month</h1>
+                        <canvas id="dashboard-chart3"></canvas>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </ui:define>
+</ui:composition>
